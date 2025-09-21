@@ -39,15 +39,30 @@ class _HomeScreenState extends State<HomeScreen> {
     final languageProvider = context.watch<LanguageProvider>();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(AppConstants.appName),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.edit),
-            onPressed: () {
-              Navigator.of(context).pushNamed('/edit-profile');
-            },
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFFF8F9FA),
+              Color(0xFFE9ECEF),
+            ],
           ),
+        ),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            title: Text(AppConstants.appName),
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.edit),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/edit-profile');
+                },
+              ),
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () async {
@@ -233,6 +248,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ],
+        ),
+      ),
         ),
       ),
     );
