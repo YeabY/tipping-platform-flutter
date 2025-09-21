@@ -45,8 +45,8 @@ class _HomeScreenState extends State<HomeScreen> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color(0xFFF8F9FA),
-              Color(0xFFE9ECEF),
+              Color(0xFF1A1A1A),
+              Color(0xFF2D2D2D),
             ],
           ),
         ),
@@ -55,7 +55,11 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            title: Text(AppConstants.appName),
+            title: Text(
+              AppConstants.appName,
+              style: const TextStyle(color: Colors.white),
+            ),
+            iconTheme: const IconThemeData(color: Colors.white),
             actions: [
               IconButton(
                 icon: const Icon(Icons.edit),
@@ -81,6 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             // Welcome Card
             Card(
+              color: Colors.black.withOpacity(0.3),
               child: Padding(
                 padding: const EdgeInsets.all(AppConstants.defaultPadding),
                 child: Column(
@@ -92,6 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           : 'እንኳን ደህና መጡ፣ ${authProvider.currentUser?.displayName ?? 'ተጠቃሚ'}!',
                       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -99,7 +105,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       languageProvider.isEnglish 
                           ? 'Ready to support creators or start receiving tips?'
                           : 'ፈጣሪዎችን ለመደገፍ ወይም ገንዘብ መቀበል ዝግጁ ናችሁ?',
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Colors.white70,
+                      ),
                     ),
                   ],
                 ),
@@ -113,6 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
               languageProvider.isEnglish ? 'Quick Actions' : 'ፈጣን ድርጊቶች',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
             ),
             
@@ -169,6 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 languageProvider.isEnglish ? 'Featured Creators' : 'የተለዩ ፈጣሪዎች',
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
               ),
               
@@ -181,6 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
             
             // User Info Card
             Card(
+              color: Colors.black.withOpacity(0.3),
               child: Padding(
                 padding: const EdgeInsets.all(AppConstants.defaultPadding),
                 child: Column(
@@ -190,6 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       languageProvider.isEnglish ? 'Account Info' : 'የመለያ መረጃ',
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
                     const SizedBox(height: 12),
@@ -230,7 +242,9 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Text(
                   languageProvider.isEnglish ? 'Language:' : 'ቋንቋ:',
-                  style: Theme.of(context).textTheme.bodyMedium,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Colors.white70,
+                  ),
                 ),
                 const SizedBox(width: 8),
                 TextButton(
@@ -261,20 +275,23 @@ class _HomeScreenState extends State<HomeScreen> {
         Icon(
           icon,
           size: 16,
-          color: Theme.of(context).colorScheme.primary,
+          color: Colors.white70,
         ),
         const SizedBox(width: 8),
         Text(
           label,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
             fontWeight: FontWeight.w600,
+            color: Colors.white70,
           ),
         ),
         const SizedBox(width: 8),
         Expanded(
           child: Text(
             value,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              color: Colors.white,
+            ),
             overflow: TextOverflow.ellipsis,
           ),
         ),
