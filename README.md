@@ -1,6 +1,6 @@
 # Tipping Platform Flutter App
 
-A comprehensive Flutter application for creators to receive tips and supporters to send tips, built according to the Software Requirements Specification (SRS).
+A comprehensive Flutter application for creators to receive tips and supporters to send tips.
 
 ## 🚀 Features Implemented
 
@@ -41,11 +41,6 @@ A comprehensive Flutter application for creators to receive tips and supporters 
 
 ### 🔄 In Progress / Pending Features
 
-#### Payment Integration
-- **REQ-008**: Secure payment processing with third-party gateway
-- **REQ-009**: Payment confirmation system
-- Stripe/PayPal integration (placeholder)
-
 #### Notifications
 - **REQ-013**: Real-time notifications for new tips
 - **REQ-014**: Email notifications for tip receipts
@@ -64,7 +59,6 @@ A comprehensive Flutter application for creators to receive tips and supporters 
 ### Data Models
 - **User Model**: User account information and creator status
 - **Tip Model**: Tip transactions with currency and status
-- **Payment Model**: Payment processing and status tracking
 - **Analytics Model**: Creator statistics and earnings data
 
 ### Local Storage
@@ -164,7 +158,6 @@ qr_flutter: ^4.1.0
 
 1. **API Configuration**
    - Update `AppConstants.baseUrl` with your backend API URL
-   - Configure payment gateway keys in `AppConstants`
 
 2. **Localization**
    - Translation files are located in `assets/translations/`
@@ -292,7 +285,6 @@ For support and questions:
 
 - Advanced analytics with charts and graphs
 - Social features and creator discovery
-- Multiple payment methods support
 - Mobile app store deployment
 - Web platform expansion
 - Advanced notification preferences
